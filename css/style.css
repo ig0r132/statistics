@@ -49,7 +49,8 @@ input {
   transition:.5s, margin-bottom .15s;
 }
 
-inpust:focus {
+/*
+input:focus {
   margin:0 1rem 1rem;
   outline:0;
 }
@@ -58,6 +59,7 @@ input:focus + header {
   transform:translate3d(0,-10rem,0);
   opacity:0;
 }
+*/
 
 .card {
   padding:1.5rem;
@@ -129,23 +131,22 @@ h2 {
 
 }
 
-#container{
-	margin-left: 3.3%;
-}
 #container img{
-	width: 50%;
-	margin: 0 auto;
-	margin-left: 24%;
+  width: 50%;
+  margin: 0 auto;
+  margin-left: 24%;
 }
 
 #result{
-	margin-left:23.3%;
+  margin-left:20%;
 }
 
 .select{
-	margin-top:15%;
-	margin-left:5%;
+  margin-top:15%;
 }
 
+#content input{
+  margin-left: -1.9%;
+}
 
 

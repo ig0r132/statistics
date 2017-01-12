@@ -4,9 +4,8 @@
         <meta charset="UTF-8">
         <!-- Angular Material style sheet -->
         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-        <title>Statistics Calculator</title>
+        <title>Calculadora Estatística</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <!-- Angular Material requires Angular.js Libraries -->
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -21,22 +20,24 @@
     <body>
         <main>
             <div id="container" ng-controller="StatisticController">
-                <div id="header"></div>
-                <div id="content">
-                    <img src="img/icon.png" class="md-card-image"/>
-                    <input type="text" name="values" placeholder="Digite aqui os valores"/>
-                    <md-input-container class="select">
-                    <label>Operações</label>
-                    <md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
-                      <md-optgroup label="Operações">
-                        <md-option ng-value="item" ng-repeat="item in items">{{item}}</md-option>
-                        </md-optgroup>
-                        </md-select>
-                    </md-input-container>
-                    <input type="submit" value="Calcular" ng-click="calculate()"/>
-                    <h1 id="result"></h1>
-                </div>
-                <div id="footer"></div>
+                <md-card class="card">
+                    <div id="header"></div>
+                    <div id="content">
+                        <img src="img/icon.png" class="md-card-image"/>
+                        <input type="text" name="values" placeholder="Digite aqui os valores"/>
+                        <md-input-container class="select">
+                        <label>Operações</label>
+                        <md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
+                          <md-optgroup label="Operações">
+                            <md-option ng-value="item" ng-repeat="item in items">{{item}}</md-option>
+                            </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                        <input type="submit" value="Calcular" ng-click="calculate()"/>
+                        <h1 id="result"></h1>
+                    </div>
+                    <div id="footer"></div>
+                </md-card>
             </div>
     </main>
     </body>
