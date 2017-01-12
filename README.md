@@ -1,2 +1,2 @@
-# statistics
-A statistic calculator
+# Calculadora Estatística
+Uma calculadora para efetuar cálculos estatísticos simples;
