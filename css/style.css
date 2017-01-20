@@ -299,3 +299,10 @@ h2 {
     font-size: 200%;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  body{
+    bottom:3%;
+  }
+
+}
