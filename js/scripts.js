@@ -23,7 +23,7 @@ app.controller('StatisticController', function($scope) {
                     break;
             }
             
-            document.getElementById('result').innerHTML = "Resultado: "+res.toFixed(4).replace('.',',');
+            document.getElementById('result').innerHTML = "Resultado: "+res;
         }else{
             alert("Favor digitar os valores que deseja calcular.");
             document.getElementById('result').innerHTML = '';
@@ -35,7 +35,7 @@ app.controller('StatisticController', function($scope) {
         for(i = 0; i < tam; i++){
             res += values[i];
         }
-        return (res/tam);
+        return (res/tam).toFixed(4).replace('.',',');
     }
     
     $scope.mediana = function(values,tam){
@@ -44,12 +44,12 @@ app.controller('StatisticController', function($scope) {
         if(tam%2 == 0){
             return (values[size-1] + values[size]) / 2;
         }else{
-            return values[Math.round(size-1)];
+            return values[Math.round(size-1)].toFixed(4).replace('.',',');
         }
     }
     
     $scope.moda = function(values,tam){
-        /*Elaborar método que calcule não somente unimodal*/
+        /*Necessário melhorar como o resultado do calculo da moda sera demonstrado*/
         values.sort(function(a, b){return a - b});
         
         var count = 1;
