@@ -2,7 +2,9 @@
 
 * { font-family: 'Roboto', sans-serif; line-height:1.2; vertical-align:middle; }
 
-body { background:#222;  }
+body { 
+  background:#222;
+}
 
 
 main {
@@ -19,6 +21,7 @@ main {
   transform-origin:center 3rem;
   transition:transform .3s;
 }
+
 body:hover main {
   transform:scale(1);
 }
@@ -49,17 +52,15 @@ input {
   transition:.5s, margin-bottom .15s;
 }
 
-/*
-input:focus {
+inpust:focus {
   margin:0 1rem 1rem;
   outline:0;
 }
 
-input:focus + header {
+inpust:focus + header {
   transform:translate3d(0,-10rem,0);
   opacity:0;
 }
-*/
 
 .card {
   padding:1.5rem;
@@ -111,10 +112,10 @@ h1 {
   font-size:2rem;
   font-weight:200;
 }
-  strong {
-    font-weight:300;
-    color:#539D00;
-  }
+strong {
+  font-weight:300;
+  color:#539D00;
+}
 
 h2 {
   font-size:.9rem;
@@ -149,4 +150,152 @@ h2 {
   margin-left: -1.9%;
 }
 
+/*IPHONE 5*/
+@media screen and (device-aspect-ratio: 40/71) {
+  body{
+    bottom: 6%;
+  }
+  
+  body:hover main {
+    transform:scale(1);
+  }
 
+  main {
+    width: 100%;
+    height: 95.7%;
+  }
+  
+  .card{
+    height: 92%;
+  }
+  
+  #content{
+    position: relative;
+    left: 7%;
+  }
+  
+  #content img{
+    position: relative;
+    left: -5%;
+  }
+  
+  #container input{
+    width: 99%;
+    right: 4%;
+    margin-top: 10%;
+  }
+  
+  #container md-select{
+    position: relative;
+    margin-top: -14%;
+    right: 5%;
+  }
+  
+  #result{
+    position: relative;
+    right: 13%;
+    font-size: 132%;
+    
+  }
+}
+
+/*IPHONE 6*/
+@media screen and (device-aspect-ratio: 375/667) {
+  body{
+    bottom: 7%;
+  }
+  
+  body:hover main {
+  transform:scale(1);
+}
+
+  main {
+    width: 100%;
+  }
+  
+  .card{
+    position: relative;
+    margin-top: 1.5%;
+    height: 94%;
+  }
+  
+  #content{
+    position: relative;
+    left: 7%;
+  }
+  
+  #content img{
+    position: relative;
+    left: -5%;
+  }
+
+  
+  #container input{
+    width: 99%;
+    right: 4%;
+    margin-top: 10%;
+  }
+  
+  #container md-select{
+    position: relative;
+    margin-top: -14%;
+    right: 6%;
+  }
+  
+  #result{
+    position: relative;
+    right: 8.5%;
+    font-size: 132%;
+    
+  }
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    body{
+    bottom:7%;
+  }
+  
+  body:hover main {
+  transform:scale(1);
+}
+
+  main {
+    width: 100%;
+    height: 97.8%;
+  }
+  
+  .card{
+    position: relative;
+    margin-top: 4%;
+    height: 94%;
+  }
+  
+  #content{
+    position: relative;
+    left: 7%;
+  }
+  
+  #content img{
+    position: relative;
+    left: -5%;
+  }
+
+  
+  #container input{
+    width: 99%;
+    right: 4%;
+    margin-top: 10%;
+  }
+  
+  #container md-select{
+    position: relative;
+    margin-top: -14%;
+    right: 14.8%;
+  }
+  
+  #result{
+    position: relative;
+    left: 5.5%;
+    font-size: 200%;
+  }
+}
