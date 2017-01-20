@@ -305,4 +305,11 @@ h2 {
     bottom:3%;
   }
 
+  .select{
+    margin-top:-1%;
+  }
+
+  .submit{
+    margin-top:-1%;
+  }
 }
