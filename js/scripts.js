@@ -19,6 +19,13 @@ app.controller('StatisticController', function($scope) {
                     break;
                 case "Moda":
                     var res = $scope.moda(values,tam);
+                    break;
+                case "Variância":
+                    var res = $scope.variancia(values,tam);
+                    break;
+                case "Desvio Padrão":
+                    var res = $scope.desvioPadrao(values,tam);
+                    break;
                 default:
                     break;
             }
@@ -49,7 +56,6 @@ app.controller('StatisticController', function($scope) {
     }
     
     $scope.moda = function(values,tam){
-        /*Necessário melhorar como o resultado do calculo da moda sera demonstrado*/
         values.sort(function(a, b){return a - b});
         
         var count = 1;
@@ -73,28 +79,38 @@ app.controller('StatisticController', function($scope) {
             }
         }
         
-        return values;
-        
-        /*
-        var count=0,max=0,mode=0,num=0;
-        for(var i = 0; i < tam; i++){
-            if(num != values[i]){
-                num = values[i];
-                count = 1;
-            }else{
-                count++;
-            }
-            
-            if(count > max){
-                max = count;
-                mode = num;
-            }
-        }
-        return mode;
-        */
+        return $scope.removeUndefined(values);
     }
 
-    $scope.items = ["Média","Mediana","Moda"];
+    $scope.variancia = function(values,tam){
+        var media = parseInt($scope.media(values,tam));
+        var total = 0;
+        
+        for(var i = 0; i < tam; i++){
+            total += Math.pow(Math.abs((values[i]-media)),2);   
+        }
+        
+        return (total/(tam-1)).toFixed(4).replace('.',',');
+    }
+    
+    $scope.desvioPadrao = function(values,tam){
+        return Math.sqrt($scope.variancia(values,tam).replace(',','.')).toFixed(4).replace('.',',');
+    }
+
+    $scope.removeUndefined = function(values){
+        var count = 0;
+        var lista = [];
+        
+        for(var i = 0; i <= values.length; i++){
+            if(typeof values[i] !== 'undefined'){
+                lista[count] = values[i];
+                count++;
+            }
+        }
+        return lista;
+    }
+
+    $scope.items = ["Média","Mediana","Moda","Variância","Desvio Padrão"];
     $scope.selectedItem;
     $scope.getSelectedText = function() {
         if ($scope.selectedItem !== undefined) {
